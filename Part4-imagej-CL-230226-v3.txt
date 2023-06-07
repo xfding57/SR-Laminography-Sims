@@ -1,0 +1,93 @@
+setOption("ExpandableArrays", true);
+closeAll();
+runsection = 1;
+
+PATH = "/staff/dingx/Desktop/Local_data/dingx/220302-prj35G12338-Hydrogel/rec/XFDing/3-Software/4-CIL/230226-faux-bar-phantom-method2/dataset-n_grid-01500-CT2132x1162-rec8bit-v3.tif";
+SAVE = "/staff/dingx/Desktop/Local_data/dingx/220302-prj35G12338-Hydrogel/rec/XFDing/3-Software/4-CIL/230226-faux-bar-phantom-method2/dataset-n_grid-01500-CT2132x1162-rec-CLv3-partial";
+mkDir(SAVE);
+
+open(PATH);
+rename("Base");
+setSlice(408);
+
+increment = 1;
+
+for (i=0; i<=360; i+=increment) {
+	filename = "proj-"+decimalPad(i,3,3)+".tif";
+	if (File.exists(SAVE+"/"+filename) == 0) {
+		print("angle "+i);
+		selectWindow("Base");
+		run("Duplicate...", "duplicate");
+		rename("Base Copy");
+		setSlice(408);
+		if (i == 0) {
+			run("Rotate... ", "angle="+0+" grid=1 interpolation=Bilinear stack");
+		} else {
+			run("Rotate... ", "angle="+i+" grid=1 interpolation=Bilinear stack");
+		}
+		makeRectangle(540, 0, 1052, 2132);
+		run("Crop");
+		run("Reslice [/]...", "output=1.000 start=Left avoid");
+		setSlice(586);
+		run("Rotate... ", "angle=-30 grid=1 interpolation=Bilinear stack");
+		makeRectangle(540, 0, 1052, 736);
+		run("Crop");
+		saveAs("Tiff", SAVE+"/"+filename);	
+		selectWindow(filename);
+		close();
+		selectWindow("Base Copy");
+		close();
+	}
+}
+closeAll();
+print("Finished");
+
+function leftPad(n, width) {
+        s =""+n;
+        while (lengthOf(s)<width)
+                s = "0"+s;
+        return s;
+}
+function rightPad(n, width) {
+        s =""+n;
+        while (lengthOf(s)<width)
+                s = s+"0";
+        return s;
+}
+function decimalPad(f,widthA,widthB) {
+        s = ""+f;
+        pos = 0;
+        for (loop=0; loop<=(lengthOf(s)-1); loop+=1) {
+                if (fromCharCode(charCodeAt(s,loop)) == ".") {
+                        pos = loop;
+                }
+        }
+        if (pos == 0) {
+                outputstr = ""+leftPad(f,widthA)+"-"+leftPad(0,widthB);
+        } else {
+                strA = "";
+                strB = "";
+                for (loopA=0; loopA<=(pos-1); loopA+=1) {
+                        strA = strA+fromCharCode(charCodeAt(s,loopA));
+                }
+                for (loopB=(pos+1); loopB<=(lengthOf(s)-1); loopB+=1) {
+                        strB = strB+fromCharCode(charCodeAt(s,loopB));
+                }
+                outputstr = ""+leftPad(strA,widthA)+"-"+rightPad(strB,widthB);
+        }
+        return outputstr;
+}
+function mkDir(f) {
+        if (File.exists(f) == 1) {
+                print("dir: "+f+" exits");
+        } else {
+                print("creating: "+f);
+                File.makeDirectory(f);
+        }
+}
+function closeAll() {
+        while (nImages()>0) {
+                selectImage(nImages());
+                run("Close");
+        }
+}
