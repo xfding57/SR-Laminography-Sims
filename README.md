@@ -16,7 +16,7 @@ Using Part1_makephantom.m in MATLAB, make an object resembling a resolution phan
 For each angular step, a .txt file containing the phantom will be created. This will be read in Part 2.
 
 ## Part 2 - Forward project
-Using Part2-astra-CT-230226.py. Forward project each .txt file from Part 1 to create a laminography dataset.
+Using Part2-astra-CT-230226.py. Use ASTRA toolbox (https://github.com/astra-toolbox/astra-toolbox) to forward project each .txt file from Part 1 to create a laminography dataset.
 
 ![Forward Project](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/n_grid-500-CL-736x622.gif)
 
@@ -31,4 +31,9 @@ Using Part6-CIL-CL-230303.py. Perform laminography reconstruction using Core Ima
 ![CIL reconstruction result](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/test-0014-runs-200-it-200-alpha-2.png)
 
 
-## Part 1 ALT - Make phantom for CT  
+## Part 1 ALT - Make phantom for CT 
+
+- Make phantom in MATLAB in CT orientation
+- Use imagej to reorient the faux phantom at the desired laminography angle and angular steps
+- Forward project using ASTRA toolbox
+- Reconstrct using tofu or CIL
