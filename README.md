@@ -24,11 +24,11 @@ Using Part2-astra-CT-230226.py. Forward project each .txt file from Part 1 to cr
 ## Part 3 - Laminography Reconstruction
 Using Part7-tofu-CL-220303.py. Peform laminography reconstruction using tofu from ufo-kit (https://github.com/ufo-kit/tofu). This is limited to filtered back projection (FBP).
 
-![tofu reconstruction result](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/sli-000-0289.tif)
+![tofu reconstruction result](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/sli-000-0289.png)
 
 Using Part6-CIL-CL-230303.py. Perform laminography reconstruction using Core Imaging Library (https://github.com/TomographicImaging/CIL). Can use FBP and also a variety of interative reconstruction methods.
 
-![CIL reconstruction result](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/test-0014-runs-200-it-200-alpha-2.tif)
+![CIL reconstruction result](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/test-0014-runs-200-it-200-alpha-2.png)
 
 
 ## Part 1 ALT - Make phantom for CT  
