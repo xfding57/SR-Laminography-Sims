@@ -9,7 +9,7 @@ Using Part1_makephantom.m in MATLAB, make an object resembling a resolution phan
 ## Part 2 - Forward project
 Using Part2-astra-CT-230226.py. Forward project each .txt file from Part 1 to create a laminography dataset.
 
-![Forward Project](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/n_grid-500-CL-736x622)
+![Forward Project](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/n_grid-500-CL-736x622.gif)
 
 
 ## Laminography Reconstruction
