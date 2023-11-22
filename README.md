@@ -38,9 +38,18 @@ Using Part6-CIL-CL-230303.py. Perform laminography reconstruction using Core Ima
 
 ## Summary
 We have a pipeline from 3D model (rudimentary) to simulated X-ray projections. For tomography we can assume a laminography angle of 90 degrees. We can then vary parameters like the FOV, relative pixel size, sample size, etc.
+
+Shepp–Logan phantom:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_shepploganphantom.gif)
+
+Steps:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_steppahntom.gif)
+
+Fine grids:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_gridwidth-0020-proj-rec.gif)
+
+Coarse grids:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_gridwidth-0050-proj-rec.gif)
-![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_nzgrid-0040-proj-rec.gif)
+
+Grids in a cube:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_nzgrid-0300-proj-rec.gif)
