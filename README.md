@@ -4,14 +4,11 @@ Simulations for computed laminography
 ## Part 1 - Make phantom for laminography
 Using Part1_makephantom.m in MATLAB, make an object resembling a resolution phantom. The structure of the phantom doesn't necessarily have to resemble any real object. Define the padding, laminography angle, and the rotation steps. The padding helps determine the field of view (FOV). If there is no padding or if the padding is too small, the edges of the phantom may rotate out of the FOV. 
 
-320x320 pixel FOV: <br />
-![Forward Project](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/gridwidth-0002-0320-proj.gif)
+QRM (PTW Freiburg GmbH) phantom that we are creating a 3D model: <br />
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_phantom.jpg)
 
-550x550 pixel FOV: <br />
-![Forward Project](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/gridwidth-0002-0550-proj.gif)
-
-1000x1000 pixel FOV: <br />
-![Forward Project](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/gridwidth-0002-1000-proj.gif)
+3D model made in solidworks: <br />
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_phantomsolidworks.jpg)
 
 For each angular step, a .txt file containing the phantom will be created. This will be read in Part 2.
 
@@ -37,3 +34,13 @@ Using Part6-CIL-CL-230303.py. Perform laminography reconstruction using Core Ima
 - Use imagej to reorient the faux phantom at the desired laminography angle and angular steps
 - Forward project using ASTRA toolbox
 - Reconstrct using tofu or CIL
+
+
+## Summary
+We have a pipeline from 3D model (rudimentary) to simulated X-ray projections. For tomography we can assume a laminography angle of 90 degrees. We can then vary parameters like the FOV, relative pixel size, sample size, etc.
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_shepploganphantom.gif)
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_steppahntom.gif)
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_gridwidth-0020-proj-rec.gif)
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_gridwidth-0050-proj-rec.gif)
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_nzgrid-0040-proj-rec.gif)
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_nzgrid-0300-proj-rec.gif)
