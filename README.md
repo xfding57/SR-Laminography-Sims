@@ -51,5 +51,8 @@ Fine grids:
 Coarse grids:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_gridwidth-0050-proj-rec.gif)
 
+Grids with some depth:
+![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_nzgrid-0100-proj-rec.gif)
+
 Grids in a cube:
 ![](https://github.com/xfding57/SR-Lamino-Sims/blob/main/media/laminosims_nzgrid-0300-proj-rec.gif)
