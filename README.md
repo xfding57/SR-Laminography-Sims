@@ -29,7 +29,6 @@ Using Part6-CIL-CL-230303.py. Perform laminography reconstruction using Core Ima
 
 
 ## Part 1 ALT - Make phantom for CT 
-
 - Make phantom in MATLAB in CT orientation
 - Use imagej to reorient the faux phantom at the desired laminography angle and angular steps
 - Forward project using ASTRA toolbox
